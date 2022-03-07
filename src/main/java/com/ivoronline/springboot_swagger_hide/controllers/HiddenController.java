@@ -1,29 +1,28 @@
 package com.ivoronline.springboot_swagger_hide.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.annotations.ApiIgnore;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+@ApiIgnore
 @RestController
-@EnableSwagger2
-public class MyController {
+public class HiddenController {
 
   //=========================================================================
-  // VISIBLE
+  // HIDDEN 1
   //=========================================================================
-  @GetMapping("Visible")
-    String visible() {
-    return "Hello from visible Endpoint";
+  @GetMapping("Hidden1")
+    String hidden1() {
+    return "Hello from hidden Controller";
   }
 
   //=========================================================================
-  // HIDDEN
+  // HIDDEN 2
   //=========================================================================
-  @ApiIgnore
-  @GetMapping("Hidden")
-    String hidden() {
-    return "Hello from hidden Endpoint";
+  @GetMapping("Hidden2")
+    String hidden2() {
+    return "Hello from hidden Controller";
   }
 
 }
